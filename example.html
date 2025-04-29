@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Logo Fetch Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-color: #1e1e1e;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .title {
+            text-align: center;
+            color: #1a73e8;
+            margin-bottom: 2rem;
+        }
+
+        .examples {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #2d2d2d;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid #444;
+        }
+
+        .examples h3 {
+            color: #1a73e8;
+            margin-bottom: 1rem;
+        }
+
+        .info-text {
+            text-align: center;
+            color: #888;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .status {
+            text-align: center;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            color: #888;
+            background: rgba(26, 115, 232, 0.1);
+        }
+
+        /* Account logo preview */
+        .account-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .account-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Web Logo Fetch Demo</h1>
+        
+        <!-- Using the Web Component -->
+        <web-logo-fetch></web-logo-fetch>
+
+        <!-- Logo Preview -->
+        <div class="account-logo">
+            <img src="" alt="Account Logo">
+        </div>
+
+        <p class="info-text">
+            The logo will be fetched in the following order:<br>
+            1. Google Favicon Service<br>
+            2. DuckDuckGo Icons<br>
+            3. Clearbit Logo API<br>
+            4. FaviconKit<br>
+            5. Direct Favicon<br>
+            6. Default Logo (First 2 letters)
+        </p>
+
+        <p class="status" id="status"></p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="public/js/weblogofetch.js"></script>
+</body>
+</html> 

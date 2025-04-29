@@ -78,5 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check authentication status on page load
     Auth.checkAuth();
 
+    // Test script for file-name-display element
+    const fileNameDisplay = document.getElementById('file-name-display');
+    if (fileNameDisplay) {
+        console.log('[Debug] file-name-display element found in DOM.');
+        console.log('[Debug] Current text content:', fileNameDisplay.textContent);
+        console.log('[Debug] Current visibility:', window.getComputedStyle(fileNameDisplay).visibility);
+        console.log('[Debug] Current display:', window.getComputedStyle(fileNameDisplay).display);
+    } else {
+        console.error('[Debug] file-name-display element not found in DOM.');
+    }
+
     console.log('Application initialized');
-}); 
+});

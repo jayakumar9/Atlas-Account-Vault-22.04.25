@@ -1,28 +1,33 @@
 /* Stored Accounts List Styles */
 .accounts-container {
     background-color: #2c2c2c;
-    padding: 20px;
+    padding: 0;
     border-radius: 8px;
     max-height: calc(100vh - 300px);
     overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 .accounts-container h2 {
     color: #ffffff;
-    margin-bottom: 20px;
+    margin: 0;
+    padding: 20px;
     font-size: 1.5em;
     position: sticky;
     top: 0;
     background-color: #2c2c2c;
-    padding: 10px 0;
-    z-index: 1;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #accounts-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    padding: 10px 0;
+    padding: 20px;
 }
 
 .account-card {
@@ -138,4 +143,12 @@
 
 .account-card a:hover {
     color: #0088cc;
-} 
+}
+
+#file-name-display {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #ffffff;
+    text-align: center;
+    visibility: visible;
+}

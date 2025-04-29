@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlas Account Vault</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/password-fields.css">
@@ -79,8 +80,15 @@
                 <h2>Add/Edit Account</h2>
                 <form id="account-form">
                     <input type="hidden" id="account-id">
-                    <div class="form-group">
-                        <input type="text" id="website" placeholder="Website" required>
+                    <div class="form-group website-group">
+                        <div class="website-input-row">
+                            <input type="text" id="website" placeholder="Website" required>
+                        </div>
+                        <div class="thumbnail-container">
+                            <div class="thumbnail-grid" id="logo-thumbnails">
+                                <!-- Thumbnails will be dynamically added here -->
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="text" id="name" placeholder="Name" required>
@@ -100,7 +108,8 @@
                         <textarea id="note" placeholder="Note"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="file" id="attachedFile">
+                        <input type="file" id="attachedFile" onchange="UI.displayFileName(this)">
+                        <p id="file-name-display" class="file-name"></p>
                     </div>
                     <div class="form-actions">
                         <button type="submit">Save</button>
@@ -111,9 +120,24 @@
 
             <!-- Accounts List -->
             <div class="accounts-container">
-                <h2>Stored Accounts</h2>
-                <div id="accounts-list"></div>
+                <div class="accounts-header" style="display: flex; justify-content: space-between; align-items: center;">
+                    <h2 style="margin: 0;">Stored Accounts</h2>
+                    <input 
+                        type="text" 
+                        id="account-search" 
+                        placeholder="Search accounts..."
+                        style="padding: 5px; width: 200px; margin-right: 16px;"
+                    />
+                </div>
+
+                <div id="accounts-list">
+                    <!-- Accounts will be dynamically inserted here -->
+                </div>
             </div>
+
+            <div id="accounts-list"></div>
+                 <!-- Account cards will appear here -->
+
         </div>
     </div>
 
@@ -124,10 +148,12 @@
     </div>
 
     <!-- Load scripts in the correct order with defer -->
+    <script defer src="js/weblogofetch.js"></script>
     <script defer src="js/notifications.js"></script>
     <script defer src="js/ui.js"></script>
-    <script defer src="js/auth.js"></script>
     <script defer src="js/account-manager.js"></script>
+    <script defer src="js/search.js"></script>
+    <script defer src="js/auth.js"></script>
     <script defer src="js/main.js"></script>
 </body>
-</html> 
+</html>

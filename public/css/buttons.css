@@ -60,4 +60,21 @@ button {
 
 .generate-btn:hover {
     background-color: #1976D2;
+}
+
+/* Generate Password button */
+.generate-password-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #0088ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.generate-password-btn:hover {
+    background-color: #0077ee;
 } 
