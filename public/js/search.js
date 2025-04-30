@@ -60,12 +60,17 @@ window.filterAccounts = function filterAccounts() {
         const accountsList = document.getElementById('accounts-list');
         if (filteredAccounts.length === 0) {
             accountsList.innerHTML = `
-                <div class="no-accounts">
-                    No accounts found.
-                </div>`;
-        } else {
+              <svg xmlns="http://www.w3.org/2000/svg" width="260" height="60">
+                <rect x="0" y="0" rx="10" ry="10" width="260" height="60" fill="blue"/>
+                <text x="130" y="38" fill="white" font-size="16" text-anchor="middle" font-family="Arial, sans-serif">
+                  No accounts found!
+                </text>
+              </svg>
+            `;
+          } else {
             AccountManager.displayAccounts(filteredAccounts);
-        }
+          }
+      
 
     }, 3000); // Delay search by 500ms
 };
